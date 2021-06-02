@@ -1,0 +1,9 @@
+{
+    "port":3001,
+    "client1":"http://localhost:3000",
+    "client2":"http://localhost:5000",
+    "secret":"secretkey",
+    "server":"https://us-central1-practice-bd57b.cloudfunctions.net/app1",
+    "database":"sql6.freemysqlhosting.net",
+    "hiring_portal":"https://hiring-portal-d4458.web.app"
+}

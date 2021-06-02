@@ -1,0 +1,16 @@
+.border{
+
+    border:3px;
+    border-color: brown;
+    color:darkcyan;
+}
+.col-sm{
+
+    color:darksalmon
+}
+
+
+.btn-danger{
+
+    margin-top: 20px;
+}

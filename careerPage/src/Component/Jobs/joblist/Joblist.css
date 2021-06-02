@@ -1,0 +1,19 @@
+.border{
+
+    border:3px;
+    border-color: brown;
+    color:darkcyan;
+}
+.col-sm{
+
+    color:darksalmon
+}
+
+
+.btn-danger{
+
+    margin-top: 20px;
+}
+.col-status{
+    color: #D33A3A;
+}

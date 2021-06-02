@@ -1,0 +1,11 @@
+{
+  "dialect": "mysql",
+    "user": "sql6415669",
+    "database": "sql6415669",
+    "password": "M55HLPXZaf",
+    "host": "sql6.freemysqlhosting.net",
+    "multipleStatements" : true
+  
+}
+
+

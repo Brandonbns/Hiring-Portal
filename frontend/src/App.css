@@ -1,0 +1,883 @@
+@import "../node_modules/@syncfusion/ej2-react-calendars/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-popups/styles/material.css";
+@import "semantic-ui-css/semantic.min.css";
+@import "react-calendar/dist/Calendar.css";
+
+#root,
+#hrRoot,
+#root2,
+#app,
+#pendingInterviews,
+#PendingInterviewForm {
+  height: 100%;
+}
+
+.arimac-red {
+  background-color: #d93639;
+}
+
+.noStyleLink {
+  color: black !important;
+}
+
+.pusher,
+.pushable {
+  height: 100% !important;
+  margin-bottom: 0 !important;
+}
+
+.ui.segment.pushable {
+  border-radius: 0 !important;
+  margin-bottom: 0em !important;
+  border: none !important;
+}
+
+.rootContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.Nav {
+  background-color: #d93639;
+  position: relative;
+}
+.nav-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  padding-left: 0 !important ;
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-link:active,
+.nav-link:hover {
+  color: rgb(4, 4, 4) !important;
+}
+.navbar {
+  height: 100% !important;
+}
+
+#header {
+  height: 9%;
+}
+#Container {
+  width: 100%;
+  height: 97%;
+  justify-content: center !important ;
+  display: flex;
+}
+
+.containerHolder {
+  height: 90%;
+  float: right;
+  width: 100%;
+}
+
+#footer {
+  padding-top: 0.5em !important;
+  width: 100% !important;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.fake-footer {
+  height: 4%;
+}
+
+.footer-hide {
+  height: 0;
+}
+
+.footer-open {
+  padding-top: 1em;
+  background-color: rgba(0, 0, 0, 0.39);
+  height: 4%;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.33),
+    0 6px 20px 0 rgba(0, 0, 0, 0.542) !important;
+}
+
+#hrRoot {
+  background-color: rgb(255, 255, 255);
+}
+
+.ui.thin.left.sidebar {
+  height: 100vh !important;
+}
+
+.scheduled {
+  background-color: bisque;
+}
+
+.formError {
+  color: rgb(255, 0, 0);
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+
+/***********************************************************************
+pending interview styles
+
+*******/
+.pendingInterviewHeader {
+  height: 5% !important;
+}
+
+#PendingInterviewForm {
+  height: 88% !important;
+  position: relative;
+  overflow-y: auto;
+  padding-bottom: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  margin-top: 0 !important;
+
+  background-color: lightgray;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.33),
+    0 6px 20px 0 rgba(0, 0, 0, 0.542) !important;
+}
+
+#pendingInterviews {
+  width: 85%;
+}
+
+.pendingInterviewContainer {
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+}
+
+/*************************************************************/
+
+#applicantSelectionForm,
+#schedule {
+  justify-content: center !important ;
+  display: flex;
+  height: 95% !important;
+}
+
+.interviewForm {
+  width: 100%;
+  float: right;
+  position: relative;
+}
+
+.interviewDataForm:hover,
+.interviewDataForm:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.727) !important;
+  transition: all 0.4s ease-in-out;
+}
+
+.interviewDataForm {
+  display: block;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  transition: all 0.4s ease-in-out;
+}
+
+.good {
+  color: green;
+}
+.bad {
+  color: red;
+  position: relative;
+}
+
+.reassign {
+  display: flex;
+  height: 50%;
+  align-self: center;
+}
+
+.dimmed.dimmable > .ui.modals.dimmer.visible {
+  display: flex !important;
+}
+.ui.modal {
+  position: relative !important;
+  height: auto !important;
+}
+
+.modal-component {
+  position: relative;
+}
+
+/*************************************************************************************/
+#schedule {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.ApplicantsPane {
+  height: 100%;
+  width: 95% !important;
+}
+#applicantSelectionForm {
+  height: 100%;
+  width: 100% !important;
+  justify-content: center;
+  display: flex;
+}
+.header {
+  padding-left: 1em !important;
+  padding-top: 1em !important;
+}
+
+.cards {
+  padding-bottom: 1em !important;
+  justify-content: center;
+}
+
+.applicantCard {
+  box-shadow: none;
+  width: 23% !important;
+  height: 46%;
+  transition: all 0.55s ease-in-out;
+}
+
+.applicantCard:hover,
+.applicantCard:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  transition: all 0.55s ease-in-out;
+}
+
+.applicantTabContent {
+  position: relative;
+  height: 60%;
+}
+
+.applicantTabActions {
+  bottom: 0;
+}
+
+.applicantInfo:hover,
+.applicantInfo:active {
+  text-shadow: 0 0 5px rgb(5, 155, 255);
+}
+
+.ApplicantsPaneHeader {
+  height: 5%;
+}
+
+.infoModal {
+  padding-bottom: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
+}
+.ApplicantsPaneContent {
+  height: 88% !important;
+  width: 100%;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em !important;
+  background-color: lightgray !important;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.542) !important;
+}
+
+.ApplicantsPaneAction {
+  height: 15% !important;
+  position: relative;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
+#InterviewForm {
+  background-color: gray;
+  height: 75vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.542) !important;
+}
+
+.applicantTab {
+  color: rgb(0, 0, 255);
+  background-color: ghostwhite;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 250px;
+}
+.applicantContent {
+  height: 85%;
+  overflow-y: auto;
+}
+
+.applicantAction {
+  margin-top: 0.8em;
+  height: 10%;
+}
+
+.applicantForm {
+  position: relative;
+}
+
+/**************************************************************************************************/
+/******************************INTERVIEWER STYLES ***********************************************/
+
+.pendingInterviewPane {
+  width: 80vw;
+  height: 98%;
+}
+
+.pendingInterviewPaneHeader {
+  height: 5%;
+}
+
+.pendingInterviewPaneContent {
+  height: 85% !important;
+  background-color: lightgray !important;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.261) !important;
+  overflow-y: auto;
+}
+
+.pendingInterviewPaneActions {
+  height: 5%;
+}
+
+.pendingInterview.card {
+  box-shadow: none;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  transition: all 0.55s ease-in-out;
+}
+
+.pendingInterview:hover,
+.pendingInterview:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  transition: all 0.55s ease-in-out;
+}
+
+/**************************************************************************************************/
+/******************************INTERVIEW home STYLES ***********************************************/
+
+#interviewsHome,
+#Dashboard {
+  width: 100%;
+  height: 100% !important;
+  justify-content: center;
+  display: flex;
+}
+
+#intHomecontainer,
+.dashboardContainer {
+  width: 98%;
+  height: 100%;
+}
+
+.confirmedInterviews {
+  height: 98%;
+  width: 70%;
+  float: left;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.pendindInterviews,
+.intStatsContainer {
+  width: 30%;
+  float: right;
+  padding-top: 0.5em !important;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.pendindInterviews {
+  height: 55%;
+}
+.intStatsContainer {
+  height: 45%;
+}
+
+.pendindInterviews {
+  justify-content: center;
+  display: flex;
+}
+.statsContainer,
+.dashboardStatsContainer {
+  border: 1px solid black;
+  border-radius: 2%;
+  height: 100% !important;
+  padding-top: 0.5em !important;
+  padding-bottom: 0.5em !important;
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
+  background-color: rgba(211, 211, 211, 0.145);
+  transition: all 0.55s ease-in-out;
+  align-items: center;
+}
+
+.dashboardStatsContainer {
+  border: 1px solid #6a6a6a;
+  border-radius: 5px !important;
+  height: 100% !important;
+}
+.statsContainer:hover,
+.statsContainer:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  transition: all 0.55s ease-in-out;
+}
+
+.dashboardStatsContainer:hover,
+.dashboardStatsContainer:active {
+  border: 1px solid #d93639;
+  box-shadow: 0 8px 17px 0 rgba(63, 63, 63, 0.083),
+    0 6px 20px 0 rgba(0, 0, 0, 0.179) !important;
+  transition: all 0.55s ease-in-out;
+}
+
+.ui.statistics {
+  width: 100% !important;
+  justify-content: space-evenly !important;
+  display: flex !important;
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.ui.statistic {
+  margin-right: 0 !important;
+}
+
+.intHomeContentContainer,
+.intHomeContent {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.intHomeContent {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  background-color: rgba(211, 211, 211, 0.638) !important;
+  overflow-y: auto;
+}
+
+.intHomeContent::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.intHomeContent {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.confirmedInterviewTab:hover,
+.confirmedInterviewTab:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  transition: all 0.55s ease-in-out;
+}
+
+.confirmedInterviewTab {
+  transition: all 0.55s ease-in-out;
+  padding-top: 1em;
+}
+
+.interviewApplicantTabContent {
+  padding-top: 1em;
+  padding-bottom: 1em !important;
+  width: 100%;
+}
+.interviewApplicantTab {
+  display: flex !important;
+}
+
+.cvbtn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: end;
+  float: right !important;
+  margin-top: 0;
+}
+
+/***********************************************Interviewer***********************/
+.upcomingInterviewPane {
+  width: 100% !important;
+  height: 99% !important;
+  overflow-y: auto;
+  background-color: lightgray !important;
+}
+
+.markedDate {
+  border: 1px solid rgba(0, 0, 0, 0.131) !important;
+  border-radius: 2%;
+  background-color: rgba(176, 224, 230, 0.501);
+  padding-bottom: 0 !important;
+}
+
+.interviewerUpcoming {
+  width: 100%;
+  height: 100% !important;
+  justify-content: center;
+  display: flex;
+}
+
+#upcomingcontainer {
+  width: 98%;
+  height: 100%;
+}
+
+.upcomingInterviews {
+  height: 100%;
+  width: 70%;
+  float: left;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.calanderContainer,
+.lowerContainer {
+  height: 50%;
+  width: 30%;
+  float: right;
+  padding-top: 0.5em !important;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  justify-content: center;
+  display: flex;
+}
+
+.react-calendar {
+  transition: all 0.55s ease-in-out;
+}
+
+.react-calendar:hover,
+.react-calendar:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  transition: all 0.55s ease-in-out;
+}
+
+/****************User login******************/
+.MuiAppBar-root {
+  background-color: #d93639 !important;
+}
+
+.MuiListItemIcon-root {
+  color: inherit !important;
+}
+
+.MuiDrawer-paper {
+  /* background-color:#000000b0 !important; */
+  overflow-x: hidden !important;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.MuiGrid-root,
+.MuiPaper-root {
+  background-color: #ffffff;
+}
+
+MuiDataGrid-cell {
+  min-width: 50px !important;
+}
+
+.loginPageRight {
+  background-color: rgba(255, 255, 255, 0.015) !important;
+}
+
+.loginPageLeft {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.loginForm {
+  background-color: rgba(255, 255, 255, 0);
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 25%;
+  position: fixed;
+  bottom: 18%;
+  left: 5%;
+  transition: all 0.55s ease-in-out;
+}
+.loginForm:hover,
+.loginForm:active {
+  background-color: rgba(253, 253, 253, 0.076) !important;
+  box-shadow: 0 8px 17px 0 rgba(68, 68, 68, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.412) !important;
+  transition: all 0.55s ease-in-out;
+}
+
+.container-fluid {
+  height: 100%;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  background-image: url(images/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loginSelection {
+  align-self: center;
+  width: 50% !important;
+  margin: auto !important;
+  background-color: rgba(255, 255, 255, 0.837) !important;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.selectionContainer {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-content: center;
+  margin: auto;
+  height: 100%;
+  background-image: url(images/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.selectionContentContainer {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.loginSelectionButton {
+  background-color: ivory !important;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1),
+    0 6px 20px 0 rgba(255, 255, 255, 0.179) !important;
+  transition: all 0.55s ease-in-out;
+}
+
+.loginSelectionButton:hover,
+.loginSelectionButton:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  transition: all 0.55s ease-in-out;
+}
+.transitionContainer {
+  height: 100% !important;
+  width: 100% !important;
+  margin: auto !important;
+  display: flex !important;
+}
+
+.loginSelectionContent {
+  margin-top: 10%;
+}
+
+.loadingContainer {
+  width: 100%;
+  height: 100%;
+}
+
+/**************************user Creation ***********/
+.userCreationForm {
+  height: fit-content !important;
+  margin-top: 10vh !important;
+  margin-bottom: auto !important;
+}
+
+/************************DAshBoard*******************************/
+.dashboardStats {
+  width: 100%;
+  height: 100%;
+}
+.carousel-inner,
+.carousel-item,
+.carousel {
+  height: 100% !important;
+}
+
+.animationContainer {
+  transition: all 0.55s ease-in-out;
+  border-radius: 10px;
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: 0.5em;
+  width: 95% !important;
+  height: 100% !important;
+}
+
+.animationContainer:hover,
+.animationContainer:active {
+  background-color: rgba(211, 211, 211, 0.145);
+  box-shadow: 0 8px 17px 0 rgba(109, 109, 109, 0.2),
+    0 6px 20px 0 rgba(121, 121, 121, 0.19) !important;
+  transition: all 0.55s ease-in-out;
+}
+.carousel {
+  color: black !important;
+}
+
+.carousel-indicators,
+.carousel-control-prev,
+.carousel-control-prev {
+  color: black !important;
+}
+.carousel.slide {
+  color: #d93639 !important;
+}
+
+.topLeft {
+  float: left;
+}
+.topRight {
+  float: right;
+}
+.bottomLeft,
+.float-left {
+  float: left;
+}
+
+.bottomRight,
+.float-right {
+  float: right;
+}
+
+.bottom {
+  position: fixed !important;
+  bottom: 0 !important;
+}
+
+.tall {
+  height: 60% !important ;
+}
+.short {
+  height: 40% !important;
+}
+
+.large {
+  height: 50%;
+  width: 70%;
+}
+.small {
+  width: 30%;
+  height: 35%;
+}
+.medium {
+  width: 30% !important ;
+  height: 50%;
+}
+.full {
+  height: 100% !important;
+  width: 100%;
+}
+
+.width-95 {
+  height: 100%;
+  width: 95% !important;
+}
+.equal {
+  width: 50%;
+  height: 50%;
+}
+
+.float-bottom {
+  align-items: flex-end;
+}
+.bordered {
+  border: 1px solid rgba(0, 0, 0, 0.131);
+}
+.padding1 {
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: 1em;
+}
+
+.padding-bottom {
+  padding-bottom: 0.5em !important;
+}
+.padding-top {
+  padding-top: 0.5em !important;
+}
+.padding-left {
+  padding-left: 1.2em !important;
+}
+
+.react-calendar__navigation {
+  margin-bottom: 0 !important;
+}
+
+.justifyCenter {
+  display: flex;
+  justify-content: center !important;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.calandarContainer {
+  height: fit-content !important;
+}
+.jobsTable {
+  height: 98% !important;
+  width: 100%;
+}
+
+.height-fit-content {
+  height: fit-content !important;
+}
+.hel {
+  color: #ff0004;
+}
+.no-margin {
+  margin-bottom: 0 !important;
+}
+.fit-content {
+  height: fit-content !important;
+}
+
+.chartContainer {
+  height: 90% !important;
+}
+
+.round {
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.disable-overflow {
+  overflow-y: auto !important;
+}
+
+/* Jobs Styles **********************/
+
+.App-link {
+  color: #0c0c0c;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
