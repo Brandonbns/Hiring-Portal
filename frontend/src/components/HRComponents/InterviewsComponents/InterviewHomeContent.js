@@ -16,6 +16,7 @@ function InterviewHomeContent({ stats }) {
   ).getTime();
 
   useEffect(() => {
+    setComingConfirmed([])
     if (confirmed) {
       confirmed.map((interview) => {
         if (
@@ -29,6 +30,7 @@ function InterviewHomeContent({ stats }) {
   }, [confirmed]);
 
   useEffect(() => {
+    setcomingConfimables([])
     if (confirmable) {
       confirmable.map((interview) => {
         if (date < new Date(interview.Interview.int_date).getTime()) {

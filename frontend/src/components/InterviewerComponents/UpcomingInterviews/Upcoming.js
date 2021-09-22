@@ -10,6 +10,7 @@ function Upcoming(props) {
   const [interviewerID, setInterviewerID] = useState(props.interviewerID);
   const [upcoming, setUpcoming] = useState([]);
   const [intDates, setIntDates] = useState([]);
+  const [loading, setloading] = useState(true)
 
   useEffect(() => {
     axios({
@@ -19,6 +20,7 @@ function Upcoming(props) {
     })
       .then((Response) => {
         setUpcoming(Response.data);
+        setloading(false)
       })
       .catch((error) => {
         console.error(error);
@@ -44,6 +46,7 @@ function Upcoming(props) {
         <div id="upcomingcontainer" className="upcomingontainer">
           <div className="upcomingInterviews">
             <UpcomingInterviewPane
+            loading={loading}
               upcoming={upcoming}
               interviewerID={interviewerID}
             />

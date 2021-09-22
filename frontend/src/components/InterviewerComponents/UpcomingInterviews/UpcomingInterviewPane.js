@@ -2,7 +2,7 @@ import React from "react";
 import { Segment } from "semantic-ui-react";
 import UpcomingInterviewTab from "./UpcomingInterviewTab";
 
-function UpcomingInterviewPane({ upcoming, interviewerID }) {
+function UpcomingInterviewPane({ upcoming, interviewerID,loading }) {
   let date = new Date().getTime();
   let twoWeeksDate = new Date();
   twoWeeksDate = new Date(
@@ -10,7 +10,7 @@ function UpcomingInterviewPane({ upcoming, interviewerID }) {
   ).getTime();
 
   return (
-    <Segment className="upcomingInterviewPane" loading={!upcoming}>
+    <Segment className="upcomingInterviewPane" loading={loading}>
       <h3>Upcoming Interviews</h3>
       {upcoming
         ? upcoming.map((interview, i) => {

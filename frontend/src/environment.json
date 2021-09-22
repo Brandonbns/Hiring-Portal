@@ -1,7 +1,7 @@
  {
   "port":3000,
   "server": " ",
-  "baseUrl" : "https://us-central1-practice-bd57b.cloudfunctions.net/app1",
+  "baseUrl" : "http://localhost:3001",
   "localhost":"http://localhost:3001",
   "firebase": "https://us-central1-practice-bd57b.cloudfunctions.net/app1"
  }
